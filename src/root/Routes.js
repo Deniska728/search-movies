@@ -3,19 +3,23 @@ import React from 'react';
 
 import { Route, Switch, Redirect } from 'react-router-dom'
 
+import MovieItem from 'modules/MovieItem/containers/MovieItem'
 import MoviesList from 'modules/MoviesList/containers/MoviesList'
-import Header from 'common/components/Header/Header';
+
+import Layout from 'common/components/Layout/Layout'
 
 const Routes = () => (
-  <Switch>
-    <Redirect exact from='/' to='/movies' />
-    <Route path='/movies' render={ () => (
-      <>
-        <Header />
+  <Layout>
+    <Switch>
+      <Redirect exact from='/' to='/movies' />
+      <Route exact path='/movies' render={ () => (
         <MoviesList />
-      </>
-    )}/>
-  </Switch>
+      )}/>
+      <Route path='/movies/:movieId' render={ () => (
+        <MovieItem />
+      )}/>
+    </Switch>
+  </Layout>
 )
   
 export default hot(Routes);

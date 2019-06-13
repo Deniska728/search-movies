@@ -29,6 +29,13 @@
     padding: 0 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    text-decoration: none;
+    color: #181818;
+
+    .link {
+      text-decoration: none;
+      color: #181818
+    }
   }
 
   @media screen and (max-width: 414px) {
